@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+   THIS IS A FILTER FOR IB SCANNERS.  TO ADD TO YOUR APP, PUT THE 
+   FOLLOWING IN YOUR AndroidManfiest.xml
+   <activity>
+    ...
+       <meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" 
+                  android:resource="@xml/device_filter" />  
+    ...
+   </activity>   
+ -->
+<resources>
+    <usb-device vendor-id="4415" product-id="4100" /> <!-- Curve       -->
+    <usb-device vendor-id="4415" product-id="4101" /> <!-- Watson      -->
+    <usb-device vendor-id="4415" product-id="4102" /> <!-- Watson Rev1 -->
+    <usb-device vendor-id="4415" product-id="4112" /> <!-- Sherlock    -->
+    <usb-device vendor-id="4415" product-id="4128" /> <!-- Watson Mini -->
+    <usb-device vendor-id="4415" product-id="4352" /> <!-- Columbo     -->
+    <usb-device vendor-id="4415" product-id="4608" /> <!-- Homes       -->
+</resources>

@@ -1,0 +1,45 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\yusuf\\Desktop\\IBScan old\\IBScan\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\yusuf\\Desktop\\IBScan old\\IBScan\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "273"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "972",
+                        "endLines": "24",
+                        "endColumns": "12",
+                        "endOffsets": "1184"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\yusuf\\Desktop\\IBScan old\\IBScan\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "2,19,7,13,12,10,11,17,16,8,6,9,3,4,15,14,5,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "57,935,320,624,566,467,521,828,772,373,269,416,103,163,724,678,216,880",
+                        "endColumns": "44,55,51,52,56,52,43,50,54,41,49,49,58,51,46,44,51,53",
+                        "endOffsets": "97,986,367,672,618,515,560,874,822,410,314,461,157,210,766,718,263,929"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,100,156,208,261,318,371,415,466,521,563,613,663,722,774,821,866,918",
+                        "endColumns": "44,55,51,52,56,52,43,50,54,41,49,49,58,51,46,44,51,53",
+                        "endOffsets": "95,151,203,256,313,366,410,461,516,558,608,658,717,769,816,861,913,967"
+                    }
+                }
+            ]
+        }
+    ]
+}

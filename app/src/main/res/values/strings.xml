@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IB Scan</string>
+    <string name="refresh_btn">To update scanners</string>
+    <string name="start_capture_btn">Start</string>
+    <string name="stop_capture_btn">Having</string>
+    <string name="open_scanner_btn">Open</string>
+    <string name="close_scanner_btn">Close</string>
+    <string name="logo_img">Logo</string>
+    <string name="preview_image">Preview</string>
+    <string name="email_image">E-mail image</string>
+    <string name="enlarge">Enlarge</string>
+    <string name="device_count_name"># SCANNERS</string>
+    <string name="device_count_default">n/a</string>
+    <string name="status_name">NFIQ</string>
+    <string name="status_default">n/a</string>
+    <string name="frame_time_name">FRAME TIME</string>
+    <string name="frame_time_default">n/a</string>
+    <string name="usb_device_name">Device : </string>
+    <string name="capture_seq_name">Capture : </string>
+</resources>
