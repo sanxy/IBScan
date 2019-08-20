@@ -71,44 +71,44 @@ import uk.co.senab.photoview.PhotoViewAttacher;
 
 public class SimpleScanActivity extends Activity implements IBScanListener, IBScanDeviceListener {
     /* *********************************************************************************************
-     * CONSTANTES PRIVADAS
+     * PRIVATE CONSTANT
      ******************************************************************************************** */
 
-    /* Tag utilizada para los mensajes de registro de Android desde esta aplicación. */
+    /* Tag used for Android log messages from this application. */
     private static final String TAG = "Simple Scan";
 
     protected static final int __INVALID_POS__ = -1;
 
-    /*El valor predeterminado del estado TextView. */
+    /*The default value of the TextView state. */
     protected static final String __NFIQ_DEFAULT__ = "0-0-0-0";
 
-    /* El valor predeterminado del tiempo de marco TextView. */
+    /*The default value of the TextView frame time. */
     protected static final String __NA_DEFAULT__ = "n/a";
 
-    /* El nombre de archivo predeterminado para imágenes y plantillas para correo electrónico. */
+    /* The default file name for images and email templates. */
     protected static final String FILE_NAME_DEFAULT = "output";
 
-    /* La cantidad de calidades de dedos establecida en la imagen de vista previa. */
+    /* The quantity of finger qualities set in the preview image. */
     protected static final int FINGER_QUALITIES_COUNT = 4;
 
-    /* El color de fondo de la imagen de vista previa ImageView. */
+    /* The background color of the ImageView preview image. */
     protected static final int PREVIEW_IMAGE_BACKGROUND = Color.LTGRAY;
 
-    /* El color de fondo de un TextView con calidad de dedo cuando el dedo no está presente. */
+    /* The background color of a TextView with finger quality when the finger is not present. */
     protected static final int FINGER_QUALITY_NOT_PRESENT_COLOR = Color.LTGRAY;
 
-    /* El color de fondo de un TextView con calidad de dedo cuando el dedo es de buena calidad. */
+    /* The background color of a TextView with finger quality when the finger is of good quality. */
     protected static final int FINGER_QUALITY_GOOD_COLOR = Color.GREEN;
 
-    /* El color de fondo de un TextView con calidad de dedo cuando el dedo es de buena calidad. */
+    /* The background color of a TextView with finger quality when the finger is of good quality. */
     protected static final int FINGER_QUALITY_FAIR_COLOR = Color.YELLOW;
 
-    /* el color de fondo de una calidad de dedo TextView cuando el dedo es de mala calidad. */
+    /* the background color of a TextView finger quality when the finger is of poor quality. */
     protected static final int FINGER_QUALITY_POOR_COLOR = Color.RED;
 
     protected final int __TIMER_STATUS_DELAY__ = 500;
 
-    // Definiciones de secuencias de captura
+    // Capture Sequence Definitions
     protected final String CAPTURE_SEQ_FLAT_SINGLE_FINGER = "Single flat finger";
     protected final String CAPTURE_SEQ_ROLL_SINGLE_FINGER = "Single rolled finger";
     protected final String CAPTURE_SEQ_2_FLAT_FINGERS = "2 flat fingers";
@@ -117,78 +117,78 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     protected final String CAPTURE_SEQ_4_FLAT_FINGERS = "4 flat fingers";
     protected final String CAPTURE_SEQ_10_FLAT_WITH_4_FINGER_SCANNER = "10 flat fingers with 4-finger scanner";
 
-    // Definiciones de pitidos
+    // Beep Definitions
     protected final int __BEEP_FAIL__ = 0;
     protected final int __BEEP_SUCCESS__ = 1;
     protected final int __BEEP_OK__ = 2;
     protected final int __BEEP_DEVICE_COMMUNICATION_BREAK__ = 3;
 
-    // Definiciones de color LED
+    // LED color definitions
     protected final int __LED_COLOR_NONE__ = 0;
     protected final int __LED_COLOR_GREEN__ = 1;
     protected final int __LED_COLOR_RED__ = 2;
     protected final int __LED_COLOR_YELLOW__ = 3;
 
-    // Definiciones de teclas
+    //Key definitions
     protected final int __LEFT_KEY_BUTTON__ = 1;
     protected final int __RIGHT_KEY_BUTTON__ = 2;
 
-    /* La cantidad de segmentos de dedo establecidos en la imagen de resultado. */
+    /* The number of finger segments set in the result image. */
     protected static final int FINGER_SEGMENT_COUNT = 4;
 
     /* *********************************************************************************************
-     * CLASES PRIVADAS
+     * PRIVATE CLASSES
      ******************************************************************************************** */
 
     /*
-     * Esta clase ajusta los datos guardados por la aplicación para cambios de configuración.
+     * This class adjusts the data saved by the application for configuration changes.
      */
     protected class AppData {
-        /* El dispositivo usb actualmente seleccionado. */
+        /* The currently selected USB device. */
         public int usbDevices = __INVALID_POS__;
 
-        /* La secuencia de captura actualmente seleccionada. */
+        /* The currently selected capture sequence. */
         public int captureSeq = __INVALID_POS__;
 
-        /* El contenido actual de nfiq TextView. */
+        /* The current content of nfiq TextView. */
         public String nfiq = __NFIQ_DEFAULT__;
 
-        /* El contenido actual del marco de tiempo TextView. */
+        /* The current content of the TextView time frame. */
         public String frameTime = __NA_DEFAULT__;
 
-        /* La imagen actual que se muestra en la vista previa de la imagen ImageView. */
+        /* The current image shown in the ImageView image preview. */
         public Bitmap imageBitmap = null;
 
-        /* Los colores de fondo actuales de la calidad del dedo TextViews. */
+        /* The current background colors of TextViews finger quality. */
         public int[] fingerQualityColors = new int[]
                 {FINGER_QUALITY_NOT_PRESENT_COLOR, FINGER_QUALITY_NOT_PRESENT_COLOR,
                         FINGER_QUALITY_NOT_PRESENT_COLOR, FINGER_QUALITY_NOT_PRESENT_COLOR};
 
-        /* Indica si se puede hacer clic largo en la vista previa de la imagen ImageView. */
+        /* Indicates whether you can click long on the preview of the ImageView image. */
         public boolean imagePreviewImageClickable = false;
 
-        /* El contenido actual de la superposición Texto TextView. */
+        /* The current content of the TextView text overlay. */
         public String overlayText = "";
 
-        /* El contenido actual del color de superposición para overlayText TextView. */
+        /* The current content of the overlay color for OverlayText TextView. */
         public int overlayColor = PREVIEW_IMAGE_BACKGROUND;
 
-        /* El contenido actual del mensaje de estado TextView. */
+        /* The current content of the TextView status message. */
         public String statusMessage = __NA_DEFAULT__;
     }
 
     protected class CaptureInfo {
-        String PreCaptureMessage;        // para mostrar en la ventana de huellas dactilares
-        String PostCaptuerMessage;        // para mostrar en la ventana de huellas dactilares
-        ImageType ImageType;                // modo de captura
-        int NumberOfFinger;            // número de conteo de dedos
-        String fingerName;                // nombre del dedo (por ejemplo, pulgares izquierdo, índice izquierdo ...)
+        String PreCaptureMessage;        // to show in the fingerprint window
+        String PostCaptuerMessage;        // to show in the fingerprint window
+        ImageType ImageType;                // capture mode
+        int NumberOfFinger;            // finger count number
+        String fingerName;                // finger name (for example, left thumbs, left index ...)
     }
 
     ;
 
     /* *********************************************************************************************
-     * CAMPOS PRIVADOS (COMPONENTES DE LA IU)
+     * PRIVATE FIELDS (COMPONENTS OF THE IU)
      ******************************************************************************************** */
 
     private TextView m_txtDeviceCount;
@@ -210,51 +210,51 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     private TextView m_txtEnlargedScale;
 
     /* *********************************************************************************************
-     * CAMPOS PRIVADOS
+     * PRIVATE FIELDS
      ******************************************************************************************** */
 
     /*
-     Un identificador para la instancia única de la clase IBScan que será la interfaz principal}
-     de la biblioteca, para operaciones como obtener el número de escáneres (getDeviceCount ())
-     y abrir escáneres (openDeviceAsync ()).
+    An identifier for the unique instance of the IBScan class that will be the main interface}
+     from the library, for operations such as getting the number of scanners (getDeviceCount ())
+     and open scanners (openDeviceAsync ()).
      */
     private IBScan m_ibScan;
 
     /*
-     Un identificador para el IBScanDevice abierto (si lo hay) que será la interfaz
-     para obtener datos del escáner abierto, incluida la captura de la imagen (beginCaptureImage (),
-     cancelCaptureImage ()) y el tipo de imagen que se captura.
+    An identifier for the open IBScanDevice (if any) that will be the interface
+     to get data from the open scanner, including image capture (beginCaptureImage (),
+     cancelCaptureImage ()) and the type of image that is captured.
      */
     private IBScanDevice m_ibScanDevice;
 
     /*
-     *Un objeto que reproducirá un sonido cuando la captura de la imagen se haya completado.
+     *An object that will play a sound when the image capture is complete.
      */
     private PlaySound m_beeper = new PlaySound();
 
     /*
-     * Información retenida para mostrar vista.
+     * Information retained to show view.
      */
     private ImageData m_lastResultImage;
     private ImageData[] m_lastSegmentImages = new ImageData[FINGER_SEGMENT_COUNT];
 
     /*
-     * Información retenida para cambios de orientación.
+     * Information retained for orientation changes.
      */
     private AppData m_savedData = new AppData();
 
-    protected int m_nSelectedDevIndex = -1;                ///< Índice del dispositivo seleccionado
-    protected boolean m_bInitializing = false;                ///< La inicialización del dispositivo está en progreso
+    protected int m_nSelectedDevIndex = -1;                ///< Index of the selected device
+    protected boolean m_bInitializing = false;                ///< Device initialization is in progress
     protected String m_ImgSaveFolderName = "";
-    String m_ImgSaveFolder = "";                    ///< Carpeta base para guardar imágenes
-    String m_ImgSubFolder = "";                    ///< Sub Carpeta para secuencia de imágenes
+    String m_ImgSaveFolder = "";                    ///<Base folder for saving images
+    String m_ImgSubFolder = "";                    ///< Sub Folder for image sequence
     protected String m_strImageMessage = "";
     protected boolean m_bNeedClearPlaten = false;
     protected boolean m_bBlank = false;
     protected boolean m_bSaveWarningOfClearPlaten;
 
-    protected Vector<CaptureInfo> m_vecCaptureSeq = new Vector<CaptureInfo>();        ///< Secuencia de pasos de captura
-    protected int m_nCurrentCaptureStep = -1;                    ///< Paso de captura actual
+    protected Vector<CaptureInfo> m_vecCaptureSeq = new Vector<CaptureInfo>();        ///< Sequence of capture steps
+    protected int m_nCurrentCaptureStep = -1;                    ///< Current capture step
 
     protected IBScanDevice.LedState m_LedState;
     protected FingerQualityState[] m_FingerQuality = {FingerQualityState.FINGER_NOT_PRESENT, FingerQualityState.FINGER_NOT_PRESENT, FingerQualityState.FINGER_NOT_PRESENT, FingerQualityState.FINGER_NOT_PRESENT};
@@ -272,16 +272,16 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
 
 
     // ////////////////////////////////////////////////////////////////////////////////////////////////////
-    // GLobal varias definiciones
+    // Global several definitions
     // ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
     /* *********************************************************************************************
-     * INTERFAZ HEREDITARIA (ACTIVIDAD ANULA)
+     * HEREDITARY INTERFACE (CANCELLATION ACTIVITY)
      ******************************************************************************************** */
 
     /*
-     * Se llama cuando la actividad se inicia.
+     * It is called when the activity starts.
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -299,15 +299,15 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
             setContentView(R.layout.ib_scan_land);
         }
 
-        /*Inicializar campos de IU. */
+        /*Initialize UI Fields. */
         _InitUIFields();
 
         /*
-         Asegúrese de que no haya dispositivos USB conectados que sean escáneres IB
-         para los que no se haya otorgado el permiso. Para cualquiera que se encuentre,
-         solicite permiso; deberíamos recibir una devolución de llamada cuando se conceda
-         o deniegue el permiso y luego cuando IBScan reconozca que los nuevos dispositivos
-         están conectados, lo que dará como resultado otra actualización.
+         Make sure there are no connected USB devices that are IB scanners
+         for those who have not been granted permission. For anyone who is,
+         request permission; we should receive a callback when granted
+         or deny permission and then when IBScan recognizes that the new devices
+         are connected, which will result in another update.
          */
 
         final UsbManager manager = (UsbManager) this.getApplicationContext().getSystemService(Context.USB_SERVICE);
@@ -326,7 +326,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
 
         OnMsg_UpdateDeviceList(false);
 
-        /* Inicializar la IU con datos. */
+        /* Initialize the UI with data. */
         _PopulateUI();
 
         _TimerTaskThreadCallback thread = new _TimerTaskThreadCallback(__TIMER_STATUS_DELAY__);
@@ -343,18 +343,18 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
             setContentView(R.layout.ib_scan_land);
         }
 
-        /* Inicializar campos de IU para una nueva orientación. */
+        /* Initialize UI fields for a new orientation. */
         _InitUIFields();
 
         OnMsg_UpdateDeviceList(true);
 
-        /* Rellene la interfaz de usuario con datos de orientación anterior. */
+        /* Fill in the user interface with previous orientation data. */
         _PopulateUI();
 
     }
 
     /*
-     * Libere los recursos del controlador.
+     * Free controller resources.
      */
 
     @Override
@@ -385,45 +385,45 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     }
 
     /* *********************************************************************************************
-     * MÉTODOS PRIVADOS
+     * PRIVATE METHODS
      ******************************************************************************************** */
 
     /*
-     * Inicializa los campos de la interfaz de usuario para una nueva orientación.
+     *Initializes the user interface fields for a new orientation.
      */
     private void _InitUIFields() {
-        m_txtDeviceCount = (TextView) findViewById(R.id.device_count);
-        m_txtNFIQ = (TextView) findViewById(R.id.txtNFIQ);
-        m_txtStatusMessage = (TextView) findViewById(R.id.txtStatusMessage);
-        m_txtOverlayText = (TextView) findViewById(R.id.txtOverlayText);
+        m_txtDeviceCount =  findViewById(R.id.device_count);
+        m_txtNFIQ =  findViewById(R.id.txtNFIQ);
+        m_txtStatusMessage =  findViewById(R.id.txtStatusMessage);
+        m_txtOverlayText =  findViewById(R.id.txtOverlayText);
 
-        /* Hard-coded para cuatro calidades del dedo. */
+        /* Hard-coded for four finger qualities. */
 
-        m_txtFingerQuality[0] = (TextView) findViewById(R.id.scan_states_color1);
-        m_txtFingerQuality[1] = (TextView) findViewById(R.id.scan_states_color2);
-        m_txtFingerQuality[2] = (TextView) findViewById(R.id.scan_states_color3);
-        m_txtFingerQuality[3] = (TextView) findViewById(R.id.scan_states_color4);
+        m_txtFingerQuality[0] =  findViewById(R.id.scan_states_color1);
+        m_txtFingerQuality[1] =  findViewById(R.id.scan_states_color2);
+        m_txtFingerQuality[2] =  findViewById(R.id.scan_states_color3);
+        m_txtFingerQuality[3] =  findViewById(R.id.scan_states_color4);
 
-        m_txtFrameTime = (TextView) findViewById(R.id.frame_time);
+        m_txtFrameTime = findViewById(R.id.frame_time);
 
-        m_txtSDKVersion = (TextView) findViewById(R.id.version);
+        m_txtSDKVersion = findViewById(R.id.version);
 
-        m_imgPreview = (ImageView) findViewById(R.id.imgPreview);
+        m_imgPreview = findViewById(R.id.imgPreview);
         m_imgPreview.setOnLongClickListener(m_imgPreviewLongClickListener);
         m_imgPreview.setBackgroundColor(PREVIEW_IMAGE_BACKGROUND);
 
-        m_btnCaptureStop = (Button) findViewById(R.id.stop_capture_btn);
+        m_btnCaptureStop = findViewById(R.id.stop_capture_btn);
         m_btnCaptureStop.setOnClickListener(this.m_btnCaptureStopClickListener);
 
-        m_btnCaptureStart = (Button) findViewById(R.id.start_capture_btn);
+        m_btnCaptureStart = findViewById(R.id.start_capture_btn);
         m_btnCaptureStart.setOnClickListener(this.m_btnCaptureStartClickListener);
 
-        m_cboUsbDevices = (Spinner) findViewById(R.id.spinUsbDevices);
-        m_cboCaptureSeq = (Spinner) findViewById(R.id.spinCaptureSeq);
+        m_cboUsbDevices = findViewById(R.id.spinUsbDevices);
+        m_cboCaptureSeq = findViewById(R.id.spinCaptureSeq);
     }
 
     /*
-     * Rellene la interfaz de usuario con datos de orientación anterior.
+     * Fill in the user interface with previous orientation data.
      */
     private void _PopulateUI() {
 
@@ -487,7 +487,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
      * Set status message text box.
      */
     protected void _SetStatusBarMessage(final String s) {
-        /* Asegúrese de que esto ocurra en el hilo de UI. */
+        /* Make sure this happens in the UI thread.*/
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -504,7 +504,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
         m_savedData.overlayText = s;
         m_savedData.overlayColor = txtColor;
 
-        /* Asegúrese de que esto ocurra en el hilo de UI. */
+        /* Make sure this happens in the UI thread. */
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -546,7 +546,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     }
 
     /*
-     * Inicializar el dispositivo usando un hilo
+     * Initialize the device using a thread
      */
     class _InitializeDeviceThreadCallback extends Thread {
         private int devIndex;
@@ -601,9 +601,9 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
         if (bitmap != null) {
             final byte[] imageBuffer = new byte[width * height * 4];
             /*
-             La imagen en el búfer se voltea verticalmente a partir
-             de lo que espera la clase Bitmap;
-             lo invertiremos para compensarlo mientras lo movemos al buffer.
+             The image in the buffer is flipped vertically from
+             from what the Bitmap class expects;
+             we will invert it to compensate it while we move it to the buffer.
              */
             for (int y = 0; y < height; y++) {
                 for (int x = 0; x < width; x++) {
@@ -672,7 +672,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
 
     protected void _DrawOverlay_ImageText(Canvas canvas) {
 /*
- * Dibujar texto sobre imagen de mapa de bits
+ * Draw text on bitmap image
  		Paint g = new Paint();
 		g.setAntiAlias(true);
 		if (m_bNeedClearPlaten)
@@ -686,7 +686,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
 */
 
         /*
-         * Dibujar textview sobre imageview
+         * Draw textview over imageview
          */
         if (m_bNeedClearPlaten)
             _SetOverlayText(m_strImageMessage, Color.RED);
@@ -715,8 +715,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
         if (image.isFinal) {
 //			if (m_chkDrawSegmentImage.isSelected())
             {
-                // Dibujar un cuadrángulo para la imagen del segmento
-
+                // Draw a quadrangle for the segment image
                 _CalculateScaleFactors(image, outWidth, outHeight);
                 Paint g = new Paint();
                 g.setColor(Color.rgb(0, 128, 0));
@@ -793,9 +792,10 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
                 getIBScanDevice().setBeeper(IBScanDevice.BeepPattern.BEEP_PATTERN_GENERIC, 2/*Sol*/, 6/*150ms = 6*25ms*/, 0, 0);
             }
         } catch (IBScanException ibse) {
-            // dispositivos para sin chip bip
-            // envía el tono a la secuencia de "alarma" (los bips clásicos van allí)
-            // con un volumen del 30%
+            /* devices for no beep chip send the tone to the
+            "alarm" sequence (the classic beeps go there)
+            with a volume of 30%
+                    */
             ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 30);
             toneG.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 300); // 300 is duration in ms
             _Sleep(300 + 150);
@@ -816,9 +816,11 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
                 getIBScanDevice().setBeeper(IBScanDevice.BeepPattern.BEEP_PATTERN_GENERIC, 2/*Sol*/, 4/*100ms = 4*25ms*/, 0, 0);
             }
         } catch (IBScanException ibse) {
-            // dispositivos para sin chip bip
-            // envía el tono a la secuencia de "alarma" (los bips clásicos van allí)
-            // con un volumen del 30%
+            /*
+            devices for no beep chip
+            send the tone to the "alarm" sequence (the classic beeps go there)
+            with a volume of 30%
+            */
             ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 30);
             toneG.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 100); // 100 is duration in ms
             _Sleep(100 + 50);
@@ -833,9 +835,11 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
                 getIBScanDevice().setBeeper(IBScanDevice.BeepPattern.BEEP_PATTERN_GENERIC, 2/*Sol*/, 4/*100ms = 4*25ms*/, 0, 0);
             }
         } catch (IBScanException ibse) {
-            // dispositivos para sin chip bip
-            // envía el tono a la secuencia de "alarma" (los bips clásicos van allí)
-            // con un volumen del 30%
+            /*
+            devices for no beep chip
+            send the tone to the "alarm" sequence (the classic beeps go there)
+            with a volume of 30%
+            */
             ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 30);
             toneG.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 100); // 100 is duration in ms
         }
@@ -843,8 +847,10 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
 
     protected void _BeepDeviceCommunicationBreak() {
         for (int i = 0; i < 8; i++) {
-            // envía el tono a la secuencia de "alarma" (los bips clásicos van allí)
-            // con un volumen del 30%
+            /*
+            send the tone to the "alarm" sequence (the classic beeps go there)
+            with a volume of 30%
+            */
             ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 30);
             toneG.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 100); // 100 is duration in ms
             _Sleep(100 + 100);
@@ -861,7 +867,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     protected void _SetTxtNFIQScore(final String s) {
         this.m_savedData.nfiq = s;
 
-        /* Asegúrese de que esto ocurra en el hilo de UI. */
+        /* Make sure this happens in the UI thread. */
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -888,13 +894,13 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
 
     protected void _UpdateCaptureSequences() {
         try {
-            // almacenar el dispositivo actualmente seleccionado
+            // store the currently selected device
             String strSelectedText = "";
             int selectedSeq = m_cboCaptureSeq.getSelectedItemPosition();
             if (selectedSeq > -1)
                 strSelectedText = m_cboCaptureSeq.getSelectedItem().toString();
 
-            // poblar el combobox
+            //populate the combobox
             m_arrCaptureSeq = new ArrayList<String>();
 
             m_arrCaptureSeq.add("- Please select -");
@@ -1094,7 +1100,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
                     setLEDs |= IBScanDevice.IBSU_LED_F_RIGHT_THUMB_RED;
                 }
             }
-            ///////////////////MANO IZQUIERDA////////////////////
+            ///////////////////LEFT HAND////////////////////
             else if ((info.fingerName.equals("SFF_Left_Index")) ||
                     (info.fingerName.equals("SRF_Left_Index"))) {
                 setLEDs |= IBScanDevice.IBSU_LED_F_PROGRESS_LEFT_HAND;
@@ -1162,7 +1168,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
                     setLEDs |= IBScanDevice.IBSU_LED_F_LEFT_LITTLE_RED;
                 }
             }
-            ///////////MANO DERECHA /////////////////////////
+            ///////////RIGHT HAND /////////////////////////
             else if ((info.fingerName.equals("SFF_Right_Index")) ||
                     (info.fingerName.equals("SRF_Right_Index"))) {
                 setLEDs |= IBScanDevice.IBSU_LED_F_PROGRESS_RIGHT_HAND;
@@ -1301,7 +1307,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
 
                 m_vecCaptureSeq.clear();
 
-/** Por favor, consulte la definición a continuación
+/** Please refer to the definition below.
  protected final String CAPTURE_SEQ_FLAT_SINGLE_FINGER 				= "Single flat finger";
  protected final String CAPTURE_SEQ_ROLL_SINGLE_FINGER 				= "Single rolled finger";
  protected final String CAPTURE_SEQ_2_FLAT_FINGERS 					= "2 flat fingers";
@@ -1527,8 +1533,10 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
 						getIBScanDevice().setProperty(IBScanDevice.PropertyId.ROLL_MODE, "0");
 					}
 */
-                    // Realice un retraso de captura para mostrar la imagen
-                    // del resultado en el modo de captura múltiple (500 ms)
+                    /*
+                    Perform a capture delay to display the image
+                    of the result in the multiple capture mode (500 ms)
+                    */
                     if (m_nCurrentCaptureStep > 0) {
                         _Sleep(500);
                         m_strImageMessage = "";
@@ -1545,7 +1553,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
                         return;
                     }
 
-                    // Iniciar captura
+                    // Start capture
                     int captureOptions = 0;
 //					if (m_chkAutoContrast.isSelected())
                     captureOptions |= IBScanDevice.OPTION_AUTO_CONTRAST;
@@ -1614,7 +1622,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
                         m_btnCaptureStart.setEnabled(false);
                     }
 
-                    //almacenar el dispositivo actualmente seleccionado
+                    //store the currently selected device
                     String strSelectedText = "";
                     int selectedDev = m_cboUsbDevices.getSelectedItemPosition();
                     if (selectedDev > -1)
@@ -1623,7 +1631,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
                     m_arrUsbDevices = new ArrayList<String>();
 
                     m_arrUsbDevices.add("- Please select -");
-                    // poblar combo box
+                    // populate combo box
                     int devices = getIBScan().getDeviceCount();
                     setDeviceCount(devices);
 //					m_cboUsbDevices.setMaximumRowCount(devices + 1);
@@ -1765,8 +1773,8 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
 
                     if (destWidth != m_BitmapImage.getWidth() || destHeight != m_BitmapImage.getHeight()) {
                         /*
-                         si se cambia el tamaño de la imagen (p. ej., tipo de captura modificada
-                         desde el dedo plano hasta el dedo enrollado) Crear bitmap nuevamente
+                         if the image size is changed (e.g., modified capture type
+                         from flat finger to rolled finger) Create bitmap again
                          */
 
                         m_BitmapImage = Bitmap.createBitmap(destWidth, destHeight, Bitmap.Config.ARGB_8888);
@@ -1815,7 +1823,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
 
             @Override
             public void run() {
-                // Actualizar el valor en el campo fingerQuality y el botón flash.
+                // Update the value in the fingerQuality field and the flash button.
                 for (int i = 0; i < 4; i++) {
                     int color;
                     if (m_FingerQuality[i] == IBScanDevice.FingerQualityState.GOOD)
@@ -1840,7 +1848,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     }
 
     /*
-     * Mostrar Toast mensaje en la UI thread.
+     *Show Toast message in the UI thread.
      */
     private void showToastOnUiThread(final String message, final int duration) {
         runOnUiThread(new Runnable() {
@@ -1906,7 +1914,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     }
 
     /*
-     * Mostrar imagen ampliada en la ventana emergente.
+     * Show enlarged image in the popup window.
      */
     private void showEnlargedImage() {
         /*
@@ -1922,9 +1930,9 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
         m_enlargedDialog.setCancelable(false);
 
         final Bitmap bitmap = m_lastResultImage.toBitmap();
-        m_imgEnlargedView = (ImageView) m_enlargedDialog.findViewById(R.id.enlarged_image);
-        m_btnCloseEnlargedDialog = (Button) m_enlargedDialog.findViewById(R.id.btnClose);
-        m_txtEnlargedScale = (TextView) m_enlargedDialog.findViewById(R.id.txtDisplayImgScale);
+        m_imgEnlargedView =  m_enlargedDialog.findViewById(R.id.enlarged_image);
+        m_btnCloseEnlargedDialog =  m_enlargedDialog.findViewById(R.id.btnClose);
+        m_txtEnlargedScale = m_enlargedDialog.findViewById(R.id.txtDisplayImgScale);
 
         m_imgEnlargedView.setScaleType(ImageView.ScaleType.CENTER);
         m_imgEnlargedView.setImageBitmap(bitmap);
@@ -1971,8 +1979,8 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     }
 
     /*
-     * Comprima la imagen y adjúntela a un correo electrónico
-     * utilizando un cliente de correo electrónico instalado.
+     *Compress the image and attach it to an email
+     * using an installed email client.
      */
     private void sendImageInEmail(final ImageData imageData, final String fileName) {
 
@@ -2015,14 +2023,14 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
         }
 
 
-        /* Si el archivo fue creado, envíe el correo electrónico. */
+        /* If the file was created, send the email. */
         if (created) {
             attachAndSendEmail(ur, "Fingerprint Image", fileName);
         }
     }
 
     /*
-     * Adjunte el archivo a un correo electrónico y envíelo.
+     * Attach the file to an email and send it.
      */
     private void attachAndSendEmail(final ArrayList ur, final String subject, final String message) {
         final Intent i = new Intent(Intent.ACTION_SEND_MULTIPLE);
@@ -2041,10 +2049,10 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     }
 
     /*
-     * Solicitud de envío de correo electrónico con imagen.
+     * Request to send email with image.
      */
     private void promptForEmail(final ImageData imageData) {
-        /* El diálogo debe mostrarse desde el UI thread. */
+        /* The dialog should be displayed from the UI thread.*/
 
         Toast.makeText(this, "consume soap promptForEmail", Toast.LENGTH_SHORT).show();
 
@@ -2093,11 +2101,11 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
 
 
     /* *********************************************************************************************
-     * EVENTOS HANDLERS
+     * EVENTS HANDLERS
      ******************************************************************************************** */
 
     /*
-     * Handle haga clic en el botón "Start capture".
+     * Handle click on the "Start capture" button".
      */
     private OnClickListener m_btnCaptureStartClickListener = new OnClickListener() {
         @Override
@@ -2113,7 +2121,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
                 try {
                     boolean IsActive = getIBScanDevice().isCaptureActive();
                     if (IsActive) {
-                        // Capture la imagen manualmente para el dispositivo activo
+                        // Capture the image manually for the active device
                         getIBScanDevice().captureImageManually();
                         return;
                     }
@@ -2136,7 +2144,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     };
 
     /*
-     * Handle haga clic en el botón "Stop capture".
+     * Handle click on the "Stop capture" button".
      */
     private OnClickListener m_btnCaptureStopClickListener = new OnClickListener() {
         @Override
@@ -2144,9 +2152,9 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
             if (getIBScanDevice() == null)
                 return;
 
-            // Cancele la captura de la imagen para el dispositivo activo
+            // Cancel image capture for the active device
             try {
-                // Cancele la captura de la imagen para el dispositivo activo.
+                // Cancel image capture for the active device.
                 getIBScanDevice().cancelCaptureImage();
                 CaptureInfo tmpInfo = new CaptureInfo();
                 _SetLEDs(tmpInfo, __LED_COLOR_NONE__, false);
@@ -2165,7 +2173,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     };
 
     /*
-     * Handle clics largos en el image view.
+     * Handle long clicks on the image view.
      */
     private OnLongClickListener m_imgPreviewLongClickListener = new OnLongClickListener() {
         /*
@@ -2203,7 +2211,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     };
 
     /*
-     * Handlehaga clic en el spinner que determina los dispositivos USB.
+     * Handle click on the spinner that determines the USB devices.
      */
     private OnItemSelectedListener m_cboUsbDevicesItemSelectedListener = new OnItemSelectedListener() {
         @Override
@@ -2220,7 +2228,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     };
 
     /*
-     * Handle haga clic en el spinner que determina la captura de la Huella digital.
+     * Handle click on the spinner that determines the fingerprint capture.
      */
     private OnItemSelectedListener m_captureTypeItemSelectedListener = new OnItemSelectedListener() {
         @Override
@@ -2242,7 +2250,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     };
 
     /*
-     * Ocultar el cuadro de diálogo ampliado, si existe.
+     * Hide the extended dialog box, if it exists.
      */
     private OnClickListener m_btnCloseEnlargedDialogClickListener = new OnClickListener() {
         @Override
@@ -2263,8 +2271,8 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
         showToastOnUiThread("Device " + deviceId + " attached", Toast.LENGTH_SHORT);
 
         /*
-         Verifique si tenemos permiso para acceder a este dispositivo.
-         Solicite permiso para que aparezca como un escáner de IB.
+         Check if we have permission to access this device.
+         Request permission to appear as an IB scanner.
          */
         final boolean hasPermission = m_ibScan.hasPermission(deviceId);
         if (!hasPermission) {
@@ -2275,10 +2283,10 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     @Override
     public void scanDeviceDetached(final int deviceId) {
         /*
-         Un dispositivo ha sido desconectado. También deberíamos recibir
-         una devolución de llamada scanDeviceCountChanged (), donde podemos actualizar la pantalla.
-         Si nuestro dispositivo se ha desconectado durante el escaneo,
-         también deberíamos recibir una devolución de llamada de DeviceCommunicationBreak ().
+         A device has been disconnected. We should also receive
+         a callback scanDeviceCountChanged (), where we can update the screen.
+         If our device was disconnected during scanning,
+         we should also receive a callback from DeviceCommunicationBreak ().
          */
         showToastOnUiThread("Device " + deviceId + " separated", Toast.LENGTH_SHORT);
     }
@@ -2287,8 +2295,8 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
     public void scanDevicePermissionGranted(final int deviceId, final boolean granted) {
         if (granted) {
             /*
-            Este dispositivo debe aparecer como un escáner de IB. Podemos esperar por el
-            devolución de llamada ScanDeviceCountChanged () para actualizar la pantalla.
+            This device should appear as an IB scanner. We can wait for him
+            Callback ScanDeviceCountChanged () to refresh the screen.
              */
             showToastOnUiThread("Permission granted to the device " + deviceId, Toast.LENGTH_SHORT);
         } else {
@@ -2385,7 +2393,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
         m_lastResultImage = image;
         m_lastSegmentImages = segmentImageArray;
 
-        // El valor de imageStatus es mayor que "STATUS_OK", adquisición de imagen exitosa.
+        // The value of imageStatus is greater than "STATUS_OK", successful image acquisition.
         if (imageStatus == null /*STATUS_OK*/ ||
                 imageStatus.getType().compareTo(IBScanException.Type.INVALID_PARAM_VALUE) > 0) {
             if (imageType.equals(IBScanDevice.ImageType.ROLL_SINGLE_FINGER)) {
@@ -2398,14 +2406,14 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
             OnMsg_DrawFingerQuality();
         }
 
-        // El valor de imageStatus es mayor que "STATUS_OK", adquisición de imagen exitosa.
+        // The value of imageStatus is greater than "STATUS_OK", successful image acquisition.
         if (imageStatus == null /*STATUS_OK*/ ||
                 imageStatus.getType().compareTo(IBScanException.Type.INVALID_PARAM_VALUE) > 0) {
-            // Adquisición de imagen exitosa
+            // Acquisition of successful image
             CaptureInfo info = m_vecCaptureSeq.elementAt(m_nCurrentCaptureStep);
             _SetLEDs(info, __LED_COLOR_GREEN__, false);
 
-            // Guardar imagen
+            // save Picture
 /*			if (m_chkSaveImages.isSelected())
 			{
 				// Show chooser for output image.
@@ -2477,7 +2485,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
             _SetImageMessage(m_strImageMessage);
             _SetStatusBarMessage(m_strImageMessage);
 
-            // Detener toda adquisición
+            // Stop all acquisition
             m_nCurrentCaptureStep = (int) m_vecCaptureSeq.size();
         }
 
@@ -2501,7 +2509,7 @@ public class SimpleScanActivity extends Activity implements IBScanListener, IBSc
             if (m_nCurrentCaptureStep >= 0) {
                 CaptureInfo info = m_vecCaptureSeq.elementAt(m_nCurrentCaptureStep);
 
-                // Mostrar mensaje para adquisición de imágenes nuevamente
+                //Show message for image acquisition again
                 String strMessage = info.PreCaptureMessage;
 
                 _SetStatusBarMessage(strMessage);
