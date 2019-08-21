@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Aug 20 18:09:07 WAT 2019
+#Wed Aug 21 08:08:47 WAT 2019
 4.path=lib/armeabi-v7a/libusb.so
 13.baseType=DIRECTORY
 8.set=NATIVE_RESOURCE
@@ -7,7 +7,7 @@
 0.baseType=DIRECTORY
 10.path=lib/x86/libibscanultimatejni.so
 5.baseType=DIRECTORY
-1.base=C\:\\Users\\yusuf\\Desktop\\IBScan old\\IBScan\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+1.base=C\:\\Users\\yusuf\\Desktop\\IBScan old\\IBScan\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 8.path=lib/arm64-v8a/libibscanultimatejni.so
 12.path=lib/armeabi/libibscanultimatejni.so
 3.base=C\:\\Users\\yusuf\\Desktop\\IBScan old\\IBScan\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
@@ -31,7 +31,7 @@
 2.baseType=DIRECTORY
 10.baseType=DIRECTORY
 15.baseType=DIRECTORY
-1.path=classes.dex
+1.path=lib/armeabi/libibscanultimate.so
 7.baseType=DIRECTORY
 3.path=lib/armeabi-v7a/libibscanultimate.so
 10.set=NATIVE_RESOURCE
@@ -41,7 +41,7 @@
 11.path=lib/x86_64/libibscanultimatejni.so
 9.path=lib/arm64-v8a/libusb.so
 6.set=NATIVE_RESOURCE
-2.base=C\:\\Users\\yusuf\\Desktop\\IBScan old\\IBScan\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
+2.base=C\:\\Users\\yusuf\\Desktop\\IBScan old\\IBScan\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 13.path=lib/armeabi/libusb.so
 11.baseType=DIRECTORY
 4.base=C\:\\Users\\yusuf\\Desktop\\IBScan old\\IBScan\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
@@ -51,7 +51,7 @@
 10.base=C\:\\Users\\yusuf\\Desktop\\IBScan old\\IBScan\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 13.set=NATIVE_RESOURCE
 8.base=C\:\\Users\\yusuf\\Desktop\\IBScan old\\IBScan\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
-2.set=NATIVE_RESOURCE
+2.set=DEX
 8.baseType=DIRECTORY
 12.base=C\:\\Users\\yusuf\\Desktop\\IBScan old\\IBScan\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 14.base=C\:\\Users\\yusuf\\Desktop\\IBScan old\\IBScan\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
@@ -63,5 +63,5 @@ count=16
 9.baseType=DIRECTORY
 0.path=lib/x86_64/libusb.so
 12.set=NATIVE_RESOURCE
-1.set=DEX
-2.path=lib/armeabi/libibscanultimate.so
+1.set=NATIVE_RESOURCE
+2.path=classes.dex

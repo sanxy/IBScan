@@ -26,14 +26,16 @@
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:orientation="vertical">
+			android:orientation="vertical"
+			tools:ignore="UselessParent">
 
 			<TextView
 				android:id="@+id/title"
 				android:layout_width="wrap_content"
 				android:layout_height="match_parent"
-				android:gravity="left"
-				android:paddingLeft="25sp"
+				android:gravity="start"
+				android:paddingStart="25sp"
+				android:paddingEnd="25sp"
 				android:text="@string/app_name"
 				android:textColor="#ff0060a0"
 				android:textIsSelectable="false"
@@ -44,8 +46,9 @@
 				android:id="@+id/version"
 				android:layout_width="wrap_content"
 				android:layout_height="match_parent"
-				android:gravity="left"
-				android:paddingLeft="25sp"
+				android:gravity="start"
+				android:paddingStart="25sp"
+				android:paddingEnd="25sp"
 				android:text=""
 				android:textColor="#ff0060a0"
 				android:textIsSelectable="false"
@@ -61,7 +64,7 @@
 		<LinearLayout
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
-			android:layout_marginRight="10dp"
+			android:layout_marginEnd="10dp"
 			android:orientation="vertical"
 			android:weightSum="1">
 
@@ -70,7 +73,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
 				android:layout_weight="0.5"
-				android:gravity="right|center"
+				android:gravity="end|center"
 				android:text="@string/usb_device_name"
 				android:textColor="@android:color/black" />
 
@@ -79,7 +82,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
 				android:layout_weight="0.5"
-				android:gravity="right|center"
+				android:gravity="end|center"
 				android:text="@string/capture_seq_name"
 				android:textColor="@android:color/black" />
 		</LinearLayout>
@@ -231,7 +234,7 @@
 			android:id="@+id/scan_states_color2"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
-			android:layout_marginRight="1dp"
+			android:layout_marginEnd="1dp"
 			android:layout_weight="1"
 			android:background="#ff0000ff"
 			android:text=""
@@ -241,7 +244,7 @@
 			android:id="@+id/scan_states_color3"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
-			android:layout_marginRight="1dp"
+			android:layout_marginEnd="1dp"
 			android:layout_weight="1"
 			android:background="#ff00ffff"
 			android:text=""
@@ -251,7 +254,7 @@
 			android:id="@+id/scan_states_color4"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
-			android:layout_marginRight="1dp"
+			android:layout_marginEnd="1dp"
 			android:layout_weight="1"
 			android:background="#ffff00ff"
 			android:text=""
@@ -265,7 +268,7 @@
 
 		<RelativeLayout
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
+			android:layout_height="0dp"
 			android:layout_weight="1">
 
 			<ImageView
@@ -278,7 +281,8 @@
 				android:paddingBottom="2dp"
 				android:paddingLeft="2dp"
 				android:paddingRight="2dp"
-				android:paddingTop="2dp" />
+				android:paddingTop="2dp"
+				tools:ignore="ObsoleteLayoutParam" />
 
 			<TextView
 				android:id="@+id/txtOverlayText"
@@ -296,8 +300,9 @@
 			android:layout_height="wrap_content"
 			android:layout_marginTop="2dp"
 			android:background="#ffccccee"
-			android:gravity="left|center"
-			android:paddingLeft="14dp"
+			android:gravity="start|center"
+			android:paddingStart="14dp"
+			android:paddingEnd="14dp"
 			android:textColor="#ff000000"
 			android:visibility="visible" />
 	</LinearLayout>
