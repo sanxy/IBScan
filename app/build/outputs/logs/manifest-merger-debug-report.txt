@@ -1,25 +1,25 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-35:12
+ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-36:12
 	package
 		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:4:5-34
 		INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-35:12
+		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-36:12
 		INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-35:12
+		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-36:12
 		INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:11-69
@@ -32,43 +32,45 @@ ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest
 	android:name
 		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:7:22-78
 application
-ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:10:5-34:19
+ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:10:5-35:19
 	android:label
-		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:13:9-41
+		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:14:9-41
 	tools:ignore
-		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:15:9-48
+		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:16:9-48
 	android:roundIcon
-		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:12:9-54
+		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:13:9-54
 	android:icon
-		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:15:9-35
+	android:name
+		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:11:9-42
 activity#com.sanxynet.ibscan.IbScanActivity
-ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:17:9-33:20
+ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:18:9-34:20
 	android:label
-		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:19:13-45
+		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:20:13-45
 	android:configChanges
-		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:20:13-74
+		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:21:13-74
 	android:theme
-		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:21:7-54
+		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:22:7-54
 	android:name
-		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:18:13-43
+		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:19:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:22:13-25:29
+ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:23:13-26:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:23:17-69
+ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:24:17-69
 	android:name
-		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:23:25-66
+		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:24:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:24:17-77
+ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:25:17-77
 	android:name
-		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:24:27-74
+		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:25:27-74
 intent-filter#action:name:android.hardware.usb.action.USB_DEVICE_ATTACHED
-ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:26:13-28:29
+ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:27:13-29:29
 action#android.hardware.usb.action.USB_DEVICE_ATTACHED
-ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:27:17-90
+ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:28:17-90
 	android:name
-		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:27:25-87
+		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:28:25-87
 uses-sdk
 INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml

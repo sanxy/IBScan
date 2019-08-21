@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Aug 21 08:32:59 WAT 2019
+#Wed Aug 21 09:07:16 WAT 2019
 4.path=lib/armeabi-v7a/libusb.so
 13.baseType=DIRECTORY
 8.set=NATIVE_RESOURCE

@@ -75,7 +75,7 @@ public class IbScanActivity extends Activity implements IBScanListener, IBScanDe
      ******************************************************************************************** */
 
     /* Tag used for Android log messages from this application. */
-    private static final String TAG = "Simple Scan";
+    private static final String TAG = "IB Scan";
 
     protected static final int __INVALID_POS__ = -1;
 
@@ -1338,13 +1338,13 @@ public class IbScanActivity extends Activity implements IBScanListener, IBScanDe
                             1,
                             "SFF_Right_Thumb");
 
-                    _AddCaptureSeqVector("Please put the correct index on the sensor!",
+                    _AddCaptureSeqVector("Please put the right index on the sensor!",
                             "Keep your fingers on the sensor!",
                             IBScanDevice.ImageType.FLAT_SINGLE_FINGER,
                             1,
                             "SFF_Right_Index");
 
-                    _AddCaptureSeqVector("Please put the correct center on the sensor!",
+                    _AddCaptureSeqVector("Please put the right middle on the sensor!",
                             "Keep your fingers on the sensor!",
                             IBScanDevice.ImageType.FLAT_SINGLE_FINGER,
                             1,
@@ -1400,13 +1400,13 @@ public class IbScanActivity extends Activity implements IBScanListener, IBScanDe
                             1,
                             "SFF_Right_Thumb");
 
-                    _AddCaptureSeqVector("Please put the correct index on the sensor!",
+                    _AddCaptureSeqVector("Please put the right index on the sensor!",
                             "Rotate finger!",
                             IBScanDevice.ImageType.ROLL_SINGLE_FINGER,
                             1,
                             "SFF_Right_Index");
 
-                    _AddCaptureSeqVector("Please put the correct center on the sensor!",
+                    _AddCaptureSeqVector("Please put the right middle on the sensor!",
                             "Rotate finger!",
                             IBScanDevice.ImageType.ROLL_SINGLE_FINGER,
                             1,
@@ -1861,8 +1861,8 @@ public class IbScanActivity extends Activity implements IBScanListener, IBScanDe
 
             sdkVersion = m_ibScan.getSdkVersion();
             txtValue = "SDK version: " + sdkVersion.file;
-        } catch (IBScanException ibse) {
-            txtValue = "(failure)";
+        } catch (IBScanException e) {
+            txtValue = "failed: "+ e;
         }
 
         /* Make sure this occurs on the UI thread. */
