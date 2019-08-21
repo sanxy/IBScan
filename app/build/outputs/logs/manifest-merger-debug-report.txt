@@ -4,6 +4,7 @@ ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest
 INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-36:12
 INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-36:12
 INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-36:12
+MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\yusuf\.gradle\caches\transforms-2\files-2.1\02edfe929016c0f8cee321fa03310beb\AndroidManifest.xml:2:1-9:12
 INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-36:12
 INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-36:12
 INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:2:1-36:12
@@ -33,6 +34,8 @@ ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest
 		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:7:22-78
 application
 ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:10:5-35:19
+MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\yusuf\.gradle\caches\transforms-2\files-2.1\02edfe929016c0f8cee321fa03310beb\AndroidManifest.xml:7:5-20
+MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\yusuf\.gradle\caches\transforms-2\files-2.1\02edfe929016c0f8cee321fa03310beb\AndroidManifest.xml:7:5-20
 	android:label
 		ADDED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml:14:9-41
 	tools:ignore
@@ -75,6 +78,8 @@ uses-sdk
 INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml
+MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\yusuf\.gradle\caches\transforms-2\files-2.1\02edfe929016c0f8cee321fa03310beb\AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\yusuf\.gradle\caches\transforms-2\files-2.1\02edfe929016c0f8cee321fa03310beb\AndroidManifest.xml:5:5-43
 INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\yusuf\Desktop\IBScan old\IBScan\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion

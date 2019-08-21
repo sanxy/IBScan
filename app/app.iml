@@ -118,8 +118,10 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 29 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:annotations:16.0.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C.\Users\yusuf\Desktop\IBScan old\IBScan\app\libs\libusb.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C.\Users\yusuf\Desktop\IBScan old\IBScan\app\libs\libibscanultimatejni.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.jakewharton.timber:timber:4.7.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C.\Users\yusuf\Desktop\IBScan old\IBScan\app\libs\libibscancommon.jar:unspecified@jar" level="project" />
   </component>
 </module>

@@ -24,4 +24,7 @@ dependencies {
     implementation files('libs/libibscancommon.jar')
     implementation files('libs/libibscanultimatejni.jar')
     implementation files('libs/libusb.jar')
+
+    // Timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
 }

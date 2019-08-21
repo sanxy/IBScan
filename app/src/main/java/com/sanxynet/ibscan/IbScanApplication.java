@@ -2,6 +2,8 @@ package com.sanxynet.ibscan;
 
 import android.app.Application;
 
+import timber.log.Timber;
+
 public class IbScanApplication extends Application {
 
     @Override
@@ -9,7 +11,7 @@ public class IbScanApplication extends Application {
         super.onCreate();
 
         if (BuildConfig.DEBUG) {
-//            Timber.plant(new Timber.DebugTree());
+            Timber.plant(new Timber.DebugTree());
         }
     }
 }

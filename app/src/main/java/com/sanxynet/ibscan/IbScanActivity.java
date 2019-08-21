@@ -67,6 +67,7 @@ import com.integratedbiometrics.ibscanultimate.IBScanDeviceListener;
 import com.integratedbiometrics.ibscanultimate.IBScanException;
 import com.integratedbiometrics.ibscanultimate.IBScanListener;
 
+import timber.log.Timber;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 public class IbScanActivity extends Activity implements IBScanListener, IBScanDeviceListener {
@@ -356,7 +357,7 @@ public class IbScanActivity extends Activity implements IBScanListener, IBScanDe
                 break;
             } catch (IBScanException ibse) {
                 if (ibse.getType().equals(IBScanException.Type.RESOURCE_LOCKED)) {
-
+                    Timber.d("Resource Locked");
                 } else {
                     break;
                 }
