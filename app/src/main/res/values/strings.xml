@@ -18,4 +18,6 @@
     <string name="frame_time_default">n/a</string>
     <string name="usb_device_name">Device : </string>
     <string name="capture_seq_name">Capture : </string>
+    <string name="close">Close</string>
+    <string name="image_scale_x">Image Scale : x</string>
 </resources>

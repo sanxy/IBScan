@@ -191,23 +191,14 @@ public class IbScanActivity extends Activity implements IBScanListener, IBScanDe
      * PRIVATE FIELDS (COMPONENTS OF THE IU)
      ******************************************************************************************** */
 
-    private TextView m_txtDeviceCount;
-    private TextView m_txtNFIQ;
-    private TextView m_txtFrameTime;
-    private TextView m_txtStatusMessage;
-    private TextView m_txtOverlayText;
-    private ImageView m_imgPreview;
-    private ImageView m_imgEnlargedView;
+    private TextView m_txtDeviceCount, m_txtNFIQ, m_txtFrameTime, m_txtStatusMessage, m_txtOverlayText,
+            m_txtEnlargedScale, m_txtSDKVersion;
+    private ImageView m_imgPreview, m_imgEnlargedView;
     private TextView[] m_txtFingerQuality = new TextView[FINGER_QUALITIES_COUNT];
-    private TextView m_txtSDKVersion;
-    private Spinner m_cboUsbDevices;
-    private Spinner m_cboCaptureSeq;
-    private Button m_btnCaptureStart;
-    private Button m_btnCaptureStop;
-    private Button m_btnCloseEnlargedDialog;
+    private Spinner m_cboUsbDevices, m_cboCaptureSeq;
+    private Button m_btnCaptureStart, m_btnCaptureStop, m_btnCloseEnlargedDialog;
     private Dialog m_enlargedDialog;
     private Bitmap m_BitmapImage;
-    private TextView m_txtEnlargedScale;
 
     /* *********************************************************************************************
      * PRIVATE FIELDS
@@ -246,11 +237,9 @@ public class IbScanActivity extends Activity implements IBScanListener, IBScanDe
     protected int m_nSelectedDevIndex = -1;                ///< Index of the selected device
     protected boolean m_bInitializing = false;                ///< Device initialization is in progress
     protected String m_ImgSaveFolderName = "";
-    String m_ImgSaveFolder = "";                    ///<Base folder for saving images
-    String m_ImgSubFolder = "";                    ///< Sub Folder for image sequence
+    String m_ImgSaveFolder = "", m_ImgSubFolder = "";                    ///<Base folder for saving images     ///< Sub Folder for image sequence
     protected String m_strImageMessage = "";
-    protected boolean m_bNeedClearPlaten = false;
-    protected boolean m_bBlank = false;
+    protected boolean m_bNeedClearPlaten = false, m_bBlank = false;
     protected boolean m_bSaveWarningOfClearPlaten;
 
     protected Vector<CaptureInfo> m_vecCaptureSeq = new Vector<CaptureInfo>();        ///< Sequence of capture steps
@@ -367,6 +356,7 @@ public class IbScanActivity extends Activity implements IBScanListener, IBScanDe
                 break;
             } catch (IBScanException ibse) {
                 if (ibse.getType().equals(IBScanException.Type.RESOURCE_LOCKED)) {
+
                 } else {
                     break;
                 }
