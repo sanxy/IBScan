@@ -1,4 +1,4 @@
-#Tue Aug 20 17:23:27 WAT 2019
+#Wed Aug 21 07:55:53 WAT 2019
 base.0=C\:\\Users\\yusuf\\Desktop\\IBScan old\\IBScan\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
